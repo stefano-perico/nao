@@ -20,7 +20,7 @@ class NaoController extends AbstractController
      */
     public function homepage()
     {
-        return new Response("Homepage!");
+        return $this->render('nao/home.html.twig');
     }
 
     /**
@@ -42,7 +42,7 @@ class NaoController extends AbstractController
             'Phasellus quis bibendum turpis. Pellentesque quis dolor molestie lacus mattis rutrum. Aenean suscipit convallis massa, ut pretium libero volutpat in.'
         ];
 
-        return $this->render('article/show.html.twig', [
+        return $this->render('nao/show.html.twig', [
             'title'     =>  ucwords(str_replace('-', ' ', $slug)),
             'comments'  => $comments
         ]);
