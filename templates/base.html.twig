@@ -10,8 +10,26 @@
 
     {% block stylesheets %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {% endblock %}
+
+    <style>
+        body{
+            line-height: 1.8;
+        }
+        .navbar-nav {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border: 0;
+            border-radius: 0;
+            margin-bottom: 0;
+        }
+
+        .navbar-nav  li a:hover {
+            color: #1abc9c;
+        }
+
+    </style>
 
 </head>
 <body>
@@ -28,7 +46,7 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                    <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> Page d'accueil</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-eye-open"></span> Observations</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-calendar"></span> Evénements</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-map-marker"></span> Carte interactive</a></li>
@@ -44,9 +62,15 @@
         </div>
     </nav>
 </header>
-<div class="container-fluid">
+
     {% block body %}{% endblock %}
-</div>
+
+<footer id="main-footer" class="row">
+        <div class="col-sm-4">Réseaux sociaux</div>
+        <div class="col-sm-4">Nous contacter</div>
+        <div class="col-sm-4">Project By <a href="http://www.web.com" target="_blank">Web.com</a></div>
+</footer>
+
 
 {% block javascripts %}
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
